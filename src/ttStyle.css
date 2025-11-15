@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Tangerine", cursive;
+    font-weight: 800;
+    font-style: normal;
+}
+
+
+
+#headSection{
+    height: 9vh;
+    border-radius: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#appName{
+    display: flex;
+}
+
+#title{
+    padding: 1rem;
+    padding-left: 0;
+}
+
+.icon{
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 1rem;
+    padding-right: 0.4rem;
+}
+
+body{
+    background-image: url("./image/backgroung.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#main{
+    display: flex;
+    /* gap: 2rem; */
+    box-sizing: border-box;
+}
+
+
+#legend{
+    width: 20%;
+}
+
+li{
+    list-style-type: none;
+    padding: 0.2rem;
+    margin: 1rem;
+}
+
+li, #newList{
+    font-size: 2rem;
+}
+
+.symbols{
+    width: 2rem;
+    height: 2rem;
+    padding-right: 0.3rem;
+}
+
+.addList{
+    display: flex;
+}
+
+#content{
+    width: 80%;
+    
+}
+
+#legend, #content{
+    margin: 1rem;
+    box-sizing: border-box;
+    height: 86.5vh;
+    border-radius: 3rem;
+    background-color: rgba(255, 255, 255, 0.35);
+}
+
