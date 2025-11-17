@@ -1,12 +1,11 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: "Tangerine", cursive;
-    font-weight: 800;
+    font-family: "Newsreader", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
     font-style: normal;
 }
-
-
 
 #headSection{
     height: 9vh;
@@ -22,12 +21,13 @@
 #title{
     padding: 1rem;
     padding-left: 0;
+    font-size: 2.5rem;
 }
 
 .icon{
     width: 2.5rem;
     height: 2.5rem;
-    padding: 1rem;
+    padding: 0.9rem 1rem;
     padding-right: 0.4rem;
 }
 
@@ -49,36 +49,119 @@ body{
     width: 20%;
 }
 
-li{
+#projects{
+    padding-top: 1rem;
+    
+}
+
+#projects li, #lists>li{
     list-style-type: none;
-    padding: 0.2rem;
-    margin: 1rem;
+    padding: 0.5rem;
+    margin:0.6rem;
 }
 
-li, #newList{
-    font-size: 2rem;
+li, #projectLabel, #listLabel{
+    font-size: 1.3rem;
 }
 
-.symbols{
+#projectHeading{
+    font-size: 1.7rem;
+    padding: 0.6rem;
+    color: rgb(54, 5, 87);
+    justify-content: center;
+    align-items: center;
+}
+
+.symbols,.addicon{
     width: 2rem;
     height: 2rem;
-    padding-right: 0.3rem;
+    margin: 0 0.5rem;
+    text-align: center;
 }
 
-.addList{
+#projectLabel, #listLabel{
+    padding: 0.5rem;
+    padding-left: 0;
+}
+
+.addProject, .addList{
     display: flex;
 }
 
-#content{
-    width: 80%;
-    
-}
 
 #legend, #content{
     margin: 1rem;
     box-sizing: border-box;
     height: 86.5vh;
-    border-radius: 3rem;
-    background-color: rgba(255, 255, 255, 0.35);
+    border-radius: 2rem;
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
+#dialogHeading{
+    color: rgb(30, 2, 49);
+    margin-bottom: 1rem;
+}
+
+#newProject, #newList{
+    margin: 15rem auto;
+    width: 70vh;
+    height: 28vh;
+    padding: 2rem;
+    border-radius: 3rem;
+    border: none;
+    padding: 3rem;
+    background-color: rgb(214, 151, 250);
+}
+
+#newList{
+    height: 60vh;
+    margin: 5rem auto;
+}
+
+input{
+    width: 100%;
+    height: 2rem;
+    background-color: rgb(248, 247, 248);
+    margin: 1rem;
+    margin-left: 0;
+    border: none;
+    font-size: 1.3rem;
+    padding: 0.5rem;
+}
+
+label{
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+dialog::backdrop{
+    background-color:  rgba(58, 27, 1,0.4);
+}
+
+#btns{
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+button{
+    width: 8rem;
+    height: 2.3rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    background-color: rgb(30, 2, 49);
+    color: white;
+     font-family: "Newsreader", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+#content{
+    width: 80%;
+}
+
+#tabHeading{
+    margin: 2rem 2rem 2rem 3rem;
+    color: rgb(54, 5, 87);
+    font-size: 1.8rem;
+}

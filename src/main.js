@@ -1,29 +1,56 @@
-// const themeList = [
-//     "./image/digital.jpg",
-//     "./image/orangeImg.jpg",
-//     "./image/raindowImg.jpg",
-//     "./image/backgroung.jpg"
-// ];
+import { addingNewProject }  from "./addProject.js";
+import { allTab } from "./allTab.js";
+import { inboxTab } from "./inboxTab.js";
+// import { todayTab } from "./todayTab.js";
+// import { upcomingTab } from "./upcomingTab.js";
+// import { addingNewList } from "./addList.js"
 
-const title = document.querySelector('#title');
+const openDialogProject = document.querySelector('.symbols');
+const openDialogList = document.querySelector('.addicon');
+const createbtn = document.getElementById('create');
+const cancelbtn = document.getElementById('cancel');
+const listcreatebtn = document.getElementById('listcreate');
+const listcancelbtn = document.getElementById('listcancel');
+const projectdialog = document.getElementById('newProject');
+const listdialog = document.getElementById('newList');
 
-// document.body.style.backgroundImage = 'url("./image/backgroung.jpg")';
+const legendOptions = document.getElementById('projects')
+let items = legendOptions.querySelectorAll('li');
 
-// let currentTheme=null;
+const allbtn = document.getElementById('all');
+const inboxbtn = document.getElementById('inbox');
+const todaybtn = document.getElementById('today');
+const upcomingbtn = document.getElementById('upcoming');
 
-// const themeIcon = document.querySelector('#theme-icon');
-// themeIcon.addEventListener('click', ()=>{
-//     let newTheme;
 
-//     do{
-//         newTheme= themeList[Math.floor(Math.random() * themeList.length)];
-//     }while(newTheme === currentTheme);
+openDialogProject.addEventListener('click',()=> projectdialog.showModal());
+openDialogList.addEventListener('click',()=> listdialog.showModal());
 
-//     currentTheme = newTheme;
+cancelbtn.addEventListener('click',()=> projectdialog.close());
+listcancelbtn.addEventListener('click',()=> listdialog.close());
 
-    // if(newTheme = './image/digital.jpg'){
-    //     title.style.color = "white";
-    // }
+createbtn.addEventListener('click',()=> addingNewProject());
+listcreatebtn.addEventListener('click',()=> addingNewList());
 
-//     document.body.style.backgroundImage = `url(${newTheme})`;
-// });
+// tabs in legend background coor change
+legendOptions.addEventListener('click', (e)=>{
+     if (e.target.tagName !== "LI") return; // click only on <li>
+
+    // remove background from all tabs
+    items.forEach(item => {
+        item.style.backgroundColor = "";
+        item.style.borderRadius = "";
+    });
+
+    e.target.style.backgroundColor = ' rgba(74, 6, 119, 0.4)';
+    e.target.style.borderRadius = '1.3rem';
+});
+
+allbtn.addEventListener('click', ()=> allTab());
+
+inboxbtn.addEventListener('click', () => inboxTab());
+
+// todaybtn.addEventListener('click', ()=> todayTab());
+
+// upcomingbtn.addEventListener('click', ()=> upcomingTab());
+
