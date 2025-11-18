@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
-    <script type="module" src="./main.js"></script>
+    <script type="module" src="./main.js" defer></script>
 </head>
 <body >
     <div id="headSection">
@@ -50,9 +50,9 @@
                         <input type="radio" id="Low" name="priority" value="Low Priority">
                         <label for="Low" class="radio">Low</label>
                     </div>
-                    <label for="">Projects</label><br><br>
-                    <select name="" id="">
-                        <option value=""></option>
+                    <label for="">Projects</label><br>
+                    <select id="projectList">
+                        <option value="">select a project</option>
                         
                     </select>
                     <div id="btns">
@@ -66,7 +66,7 @@
             <div id="projectHeading">Projects</div>
             <!-- creating new projects dialog or popup -->
             <dialog id="newProject">
-                <form method="dialog">
+                <form id="newProjectForm" method="dialog">
                     <h1 id="dialogHeading">Creat a New Project</h1>
                     <!-- <label for="projectName">Project Name</label> -->
                     <input type="text" id="projectName" placeholder="work, personal etc..">
@@ -78,7 +78,7 @@
                 </form>
             </dialog>
             <ul id="lists">
-                <li>Work</li>
+                <li id="defaultProject">Default</li>
             </ul>
             <div class="addProject">
                 <img class="symbols" src="./image/addicon.webp" alt="">

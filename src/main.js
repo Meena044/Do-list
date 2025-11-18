@@ -1,4 +1,6 @@
 import { addingNewProject }  from "./addProject.js";
+import { loadProjectsFromStorage } from "./projectDisplay.js"
+import { addingNewList } from "./addList.js"
 import { allTab } from "./allTab.js";
 import { inboxTab } from "./inboxTab.js";
 // import { todayTab } from "./todayTab.js";
@@ -17,6 +19,8 @@ const listdialog = document.getElementById('newList');
 const legendOptions = document.getElementById('projects')
 let items = legendOptions.querySelectorAll('li');
 
+const projectsOptions = document.getElementById('lists')
+
 const allbtn = document.getElementById('all');
 const inboxbtn = document.getElementById('inbox');
 const todaybtn = document.getElementById('today');
@@ -29,10 +33,15 @@ openDialogList.addEventListener('click',()=> listdialog.showModal());
 cancelbtn.addEventListener('click',()=> projectdialog.close());
 listcancelbtn.addEventListener('click',()=> listdialog.close());
 
+// when create button is clicked in popup 
 createbtn.addEventListener('click',()=> addingNewProject());
+// function call to display projects on UI
+loadProjectsFromStorage(JSON.parse(localStorage.getItem("todoProjects")));
+
 listcreatebtn.addEventListener('click',()=> addingNewList());
 
-// tabs in legend background coor change
+
+// tabs in legend background color change
 legendOptions.addEventListener('click', (e)=>{
      if (e.target.tagName !== "LI") return; // click only on <li>
 
@@ -40,6 +49,21 @@ legendOptions.addEventListener('click', (e)=>{
     items.forEach(item => {
         item.style.backgroundColor = "";
         item.style.borderRadius = "";
+    });
+
+    e.target.style.backgroundColor = ' rgba(74, 6, 119, 0.4)';
+    e.target.style.borderRadius = '1.3rem';
+});
+
+projectsOptions.addEventListener('click', (e)=>{
+     if (e.target.tagName !== "LI") return; // click only on <li>
+
+     const projOpt = projectsOptions.querySelectorAll("li");
+
+    // remove background from all tabs
+    projOpt.forEach(opt => {
+        opt.style.backgroundColor = "";
+        opt.style.borderRadius = "";
     });
 
     e.target.style.backgroundColor = ' rgba(74, 6, 119, 0.4)';
