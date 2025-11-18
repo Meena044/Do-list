@@ -19,6 +19,7 @@
         <!-- <img class="icon" id="theme-icon" src="./image/themee.webp" alt="theme icon" title="Change Theme"> -->
     </div>
     <div id="main">
+        <!-- legend elements displayed -->
         <div id="legend">
             <ul id="projects">
                 <li id="all">All</li>
@@ -30,7 +31,7 @@
                     <img class="addicon" src="./image/addicon.webp" alt="">
                     <div id="listLabel">New List</div>
                 </div>
-            
+            <!-- creating new list dialog or popup -->
             <dialog id="newList">
                 <form method="dialog">
                     <h1 id="dialogHeading" >Create a New List</h1>
@@ -38,8 +39,22 @@
                     <input type="text" placeholder="List Name" id="listname">
                     <label for="listDesctiption">Description</label>
                     <input type="text" placeholder="Description about List" id="listDesctiption">
-                    <label for="targetDate">Target Date</label>
+                    <label for="targetDate">Due Date</label>
                     <input type="date" id="targetDate">
+                    <label for="priority">List Priority</label>
+                    <div class="prioritySelector">
+                        <input type="radio" id="High" name="priority" value="High Priority">
+                        <label for="High" class="radio">High</label>
+                        <input type="radio" id="Medium" name="priority" value="Medium Priority">
+                        <label for="Medium" class="radio">Medium</label>
+                        <input type="radio" id="Low" name="priority" value="Low Priority">
+                        <label for="Low" class="radio">Low</label>
+                    </div>
+                    <label for="">Projects</label><br><br>
+                    <select name="" id="">
+                        <option value=""></option>
+                        
+                    </select>
                     <div id="btns">
                         <button id="listcreate" type="submit">Create</button>
                         <button id="listreset" type="reset">Reset</button>
@@ -49,6 +64,7 @@
             </dialog>
 
             <div id="projectHeading">Projects</div>
+            <!-- creating new projects dialog or popup -->
             <dialog id="newProject">
                 <form method="dialog">
                     <h1 id="dialogHeading">Creat a New Project</h1>
@@ -63,15 +79,13 @@
             </dialog>
             <ul id="lists">
                 <li>Work</li>
-                <li>Goals</li>
-                <li>Fitness</li>
-                <li>Hobbies</li>
             </ul>
             <div class="addProject">
                 <img class="symbols" src="./image/addicon.webp" alt="">
                 <div id="projectLabel">New Project</div>
             </div>
         </div>
+        <!-- main content block display according to the tab selected -->
         <div id="content">
             <h2 id="tabHeading"></h2>
                 
