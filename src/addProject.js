@@ -1,29 +1,36 @@
 import { loadProjectsFromStorage } from "./projectDisplay.js"
 
-let todoProjects = JSON.parse(localStorage.getItem("todoProjects")) || [];
+function createProject(inputProjectName){
+    return {
+        inputProjectName
+    }
+}
 
 export function addingNewProject(){
-    const projectsForm = document.getElementById('newProjectForm');
+
+    function readProjectform(){
+        const projectsForm = document.getElementById('newProjectForm');
+
+        projectsForm.addEventListener('submit', ()=>{
+            // e.preventDefault();
+
+            const inputProjectName = document.getElementById('projectName').value.trim();
+            if (!inputProjectName) return;
+
+            let todoProjects = JSON.parse(localStorage.getItem("todoProjects")) || [];
+
+            const project = createProject(inputProjectName);
+ 
+            todoProjects.push(project);
+            localStorage.setItem('todoProjects', JSON.stringify(todoProjects));   
+
+            document.getElementById('projectName').value="";
+
+            // loadProjectsFromStorage(JSON.parse(localStorage.getItem("todoProjects")));
+            loadProjectsFromStorage(todoProjects);
+        });
+    }
     
-
-    projectsForm.addEventListener('submit', (e)=>{
-        // e.preventDefault();
-
-        const inputProjectName = document.getElementById('projectName').value.trim();
-        if (!inputProjectName) return;
-
-        const project ={
-            name: inputProjectName,
-        };
-
-        todoProjects.push(project);
-        localStorage.setItem('todoProjects', JSON.stringify(todoProjects));
-
-        document.getElementById('projectName').value="";
-
-        loadProjectsFromStorage(JSON.parse(localStorage.getItem("todoProjects")));
-
-    });
-    
+    return { readProjectform };
 }
 

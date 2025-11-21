@@ -10,13 +10,19 @@ export function loadProjectsFromStorage(projectsArray) {
     projectsArray.forEach(project => {
     //  adding the project to display in legend
         const liTag = document.createElement('li');
-        liTag.textContent= project.name;
+        liTag.textContent= project.inputProjectName;
         UlTagOfProjects.append(liTag);
 
         // adding the project to display->creating new list -> projects dropdown
         const optionTag = document.createElement('option');
-        optionTag.textContent = project.name;
+        optionTag.textContent = project.inputProjectName;
         selectTag.append(optionTag);
+
+        const deleteImg = document.createElement('img');
+        deleteImg.src = "./image/delete.svg";
+        deleteImg.alt = "delete icon";
+        deleteImg.classList.add('deleteicon');
+        liTag.append(deleteImg);
     });
 }
 

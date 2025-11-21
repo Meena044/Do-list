@@ -33,7 +33,7 @@
                 </div>
             <!-- creating new list dialog or popup -->
             <dialog id="newList">
-                <form method="dialog">
+                <form id="newListForm" method="dialog">
                     <h1 id="dialogHeading" >Create a New List</h1>
                     <label for="listname">List Name</label>
                     <input type="text" placeholder="List Name" id="listname">
@@ -63,7 +63,7 @@
                 </form>
             </dialog>
 
-            <div id="projectHeading">Projects</div>
+            <br><div id="projectHeading">Projects</div>
             <!-- creating new projects dialog or popup -->
             <dialog id="newProject">
                 <form id="newProjectForm" method="dialog">
@@ -77,6 +77,7 @@
                     </div>
                 </form>
             </dialog>
+
             <ul id="lists">
                 <li id="defaultProject">Default</li>
             </ul>
@@ -85,6 +86,7 @@
                 <div id="projectLabel">New Project</div>
             </div>
         </div>
+
         <!-- main content block display according to the tab selected -->
         <div id="content">
             <h2 id="tabHeading"></h2>

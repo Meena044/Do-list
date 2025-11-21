@@ -1,6 +1,7 @@
 import { addingNewProject }  from "./addProject.js";
 import { loadProjectsFromStorage } from "./projectDisplay.js"
-import { addingNewList } from "./addList.js"
+import { adddingNewList } from "./addList.js";
+import { deletelist, deleteProject } from "./delete.js";
 import { allTab } from "./allTab.js";
 import { inboxTab } from "./inboxTab.js";
 // import { todayTab } from "./todayTab.js";
@@ -15,6 +16,9 @@ const listcreatebtn = document.getElementById('listcreate');
 const listcancelbtn = document.getElementById('listcancel');
 const projectdialog = document.getElementById('newProject');
 const listdialog = document.getElementById('newList');
+const UlTagOfProjects = document.getElementById('lists');
+const selectTag = document.getElementById('projectList');
+// const deleteicon = document.querySelector('.deleticon');
 
 const legendOptions = document.getElementById('projects')
 let items = legendOptions.querySelectorAll('li');
@@ -34,12 +38,16 @@ cancelbtn.addEventListener('click',()=> projectdialog.close());
 listcancelbtn.addEventListener('click',()=> listdialog.close());
 
 // when create button is clicked in popup 
-createbtn.addEventListener('click',()=> addingNewProject());
+const projectManager = addingNewProject();
+createbtn.addEventListener("click", projectManager.readProjectform);
 // function call to display projects on UI
 loadProjectsFromStorage(JSON.parse(localStorage.getItem("todoProjects")));
 
-listcreatebtn.addEventListener('click',()=> addingNewList());
+const listManager = adddingNewList();
+listcreatebtn.addEventListener("click", listManager.readSubmit);
 
+
+UlTagOfProjects.addEventListener('click', (e)=> deletelist(e.target));
 
 // tabs in legend background color change
 legendOptions.addEventListener('click', (e)=>{
