@@ -15,6 +15,6 @@ export function highlightBG(targetLi){
         item.style.borderRadius = "";
     });
 
-    targetLi.style.backgroundColor = ' rgba(74, 6, 119, 0.4)';
+    targetLi.style.backgroundColor = ' rgba(164, 56, 236, 0.4)';
     targetLi.style.borderRadius = '1.3rem';
 }

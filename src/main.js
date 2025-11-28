@@ -1,7 +1,7 @@
 import { addingNewProject }  from "./addProject.js";
 import { loadProjectsFromStorage } from "./projectDisplay.js"
 import { adddingNewList } from "./addList.js";
-import { deletelist, deleteProject } from "./delete.js";
+import { deleteProjectlist, deleteTodos } from "./delete.js";
 import { highlightBG } from "./tabSwitching.js";
 import { allTab } from "./allTab.js";
 import { inboxTab } from "./inboxTab.js";
@@ -41,9 +41,13 @@ loadProjectsFromStorage(JSON.parse(localStorage.getItem("todoProjects")));
 
 const listManager = adddingNewList();
 listcreatebtn.addEventListener("click", listManager.readSubmit);
+// loadListFromStorage(JSON.parse(localStorage.getItem("todosList")))
 
 
-UlTagOfProjects.addEventListener('click', (e)=> deletelist(e.target));
+UlTagOfProjects.addEventListener('click', (e)=> deleteProjectlist(e.target));
+
+const carddelete = document.querySelector('#cards');
+carddelete.addEventListener('click', (e)=> deleteTodos(e.target));
 
 // tabs in legend background color change
 legendOptions.addEventListener('click', (e)=>{
@@ -56,8 +60,15 @@ projectsOptions.addEventListener('click', (e)=>{
     highlightBG(e.target);
 });
 
+const allTabManager = allTab();
+allbtn.addEventListener('click', allTab.tableRow);
+// default clicked
+window.addEventListener('DOMContentLoaded', ()=>{
+    allbtn.click();
+    highlightBG(allbtn);
+});
 
-allbtn.addEventListener('click', ()=> allTab());
+
 
 inboxbtn.addEventListener('click', () => inboxTab());
 

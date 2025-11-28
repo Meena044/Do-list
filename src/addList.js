@@ -1,10 +1,10 @@
-// import { displayingListInUI } from "./listDisplay";
-import { allTab } from "./allTab.js";
+import { displayListUI } from "./listDisplay.js";
 
-function createTodo(listname, listDesctiption, targetDate, prioritySelector, projectList){
+function createTodo(listname, listDescription, targetDate, prioritySelector, projectList){
     return {
+        // Id : crypto.randomUUID(),
         listname,
-        listDesctiption,
+        listDescription,
         targetDate,
         prioritySelector,
         projectList
@@ -23,17 +23,25 @@ export function adddingNewList(){
             let todosList = JSON.parse(localStorage.getItem("todosList")) || [];
             
             const listname = document.getElementById('listname').value.trim();
-            const listDesctiption = document.getElementById('listDesctiption').value.trim();
+            const listDescription = document.getElementById('listDescription').value.trim();
             const targetDate = document.getElementById('targetDate').value.trim();
             const prioritySelector = document.querySelector("input[name='priority']:checked").value;
             const projectList = document.getElementById('projectList').value.trim();
 
-            const todo= createTodo(listname, listDesctiption, targetDate, prioritySelector, projectList);
+            if(!listname || !projectList) return;
+
+            const todo= createTodo(listname, listDescription, targetDate, prioritySelector, projectList);
 
             todosList.push(todo);
             localStorage.setItem("todosList", JSON.stringify(todosList));
 
-            allTab(todosList);
+            document.getElementById('listname').value ="";
+            document.getElementById('listDescription').value ="";
+            document.getElementById('targetDate').value ="";
+            document.querySelector("input[name='priority']:checked").value ="";
+            document.getElementById('projectList').value = "";
+
+            displayListUI(todosList);
         });
     }
 

@@ -36,22 +36,22 @@
             <dialog id="newList">
                 <form id="newListForm" method="dialog">
                     <h1 id="dialogHeading" >Create a New List</h1>
-                    <label for="listname">List Name</label>
+                    <label for="listname">List Name *</label>
                     <input type="text" placeholder="List Name" id="listname">
                     <label for="listDesctiption">Description</label>
-                    <input type="text" placeholder="Description about List" id="listDesctiption">
+                    <input type="text" placeholder="Description about List" id="listDescription">
                     <label for="targetDate">Due Date</label>
                     <input type="date" id="targetDate">
                     <label for="priority">List Priority</label>
                     <div class="prioritySelector">
-                        <input type="radio" id="High" name="priority" value="High Priority">
+                        <input type="radio" id="High" name="priority" value="High">
                         <label for="High" class="radio">High</label>
-                        <input type="radio" id="Medium" name="priority" value="Medium Priority">
+                        <input type="radio" id="Medium" name="priority" value="Medium">
                         <label for="Medium" class="radio">Medium</label>
-                        <input type="radio" id="Low" name="priority" value="Low Priority">
+                        <input type="radio" id="Low" name="priority" value="Low" checked>
                         <label for="Low" class="radio">Low</label>
                     </div>
-                    <label for="">Projects</label><br>
+                    <label for="">Projects *</label><br>
                     <select id="projectList">
                         <option value="">select a project</option>
                         
@@ -91,7 +91,14 @@
         <div id="content">
             <h2 id="tabHeading"></h2>
             <div id="cards">
-
+                <div class="cardHeading">
+                    <span>Name</span>
+                    <span>Description</span>
+                    <span>Target Date</span>
+                    <span>Priority</span>
+                    <span>Project</span>
+                    <span>Action</span>
+                </div>
             </div>
                 
         </div>

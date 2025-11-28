@@ -46,7 +46,7 @@ body{
 
 
 #legend{
-    width: 25%;
+    width: 15%;
     height: auto;
 }
 
@@ -120,7 +120,7 @@ li, #projectLabel, #listLabel{
 }
 
 #newProject, #newList{
-    width: 70vh;
+    width: 45%;
     padding: 2rem;
     border-radius: 3rem;
     border: none;
@@ -129,7 +129,7 @@ li, #projectLabel, #listLabel{
 }
 
 #newList{
-    height: 80vh;
+    height: 85%;
     margin: 1.5rem auto 0;
     padding: 2rem;
 }
@@ -178,7 +178,7 @@ button{
 }
 
 #content{
-    width: 75%;
+    width: 80%;
     height: auto;
 }
 
@@ -205,12 +205,20 @@ input[type="radio"]{
     font-weight: 500;
 }
 
-/* .box{
-    display: grid;
-    grid-template-columns: 1.5fr repeat(3, 1fr);
-    grid-template-rows: 1fr;
-    background-color: #730b8d;
-    gap: 1rem;
-} */
+span{
+    width: 20vh;
+    margin: 1rem;
+    font-size: 1.2rem;
+}
 
-#grid
+
+.cardDiv, .cardHeading{
+    display: flex;
+    justify-content: space-between;
+}
+
+.cardHeading{
+    background-color: rgba(164, 56, 236, 0.4);
+    border-radius: 2rem;
+    margin: 0 0.3rem;
+}
