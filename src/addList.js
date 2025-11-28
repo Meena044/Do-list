@@ -1,3 +1,6 @@
+// import { displayingListInUI } from "./listDisplay";
+import { allTab } from "./allTab.js";
+
 function createTodo(listname, listDesctiption, targetDate, prioritySelector, projectList){
     return {
         listname,
@@ -29,6 +32,8 @@ export function adddingNewList(){
 
             todosList.push(todo);
             localStorage.setItem("todosList", JSON.stringify(todosList));
+
+            allTab(todosList);
         });
     }
 

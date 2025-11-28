@@ -204,3 +204,13 @@ input[type="radio"]{
     font-size: 1.2rem;
     font-weight: 500;
 }
+
+/* .box{
+    display: grid;
+    grid-template-columns: 1.5fr repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    background-color: #730b8d;
+    gap: 1rem;
+} */
+
+#grid
