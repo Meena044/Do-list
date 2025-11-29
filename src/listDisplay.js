@@ -9,6 +9,7 @@ export function displayListUI(todosList){
     todosList.forEach(list => {
             const name = document.createElement('div');
             name.className='cardDiv';
+            name.dataset.id = list.Id;
             name.innerHTML = `
                 <span>${list.listname}</span>
                 <span>${list.listDescription}</span>

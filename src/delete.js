@@ -2,8 +2,8 @@
 export function deleteTodos(target){
    if(target.classList.contains('deleteicon')){
         const div = target.closest('.cardDiv');
-        const clickedId = target.id;
-        let todoItems = JSON.parse(localStorage.getItem('todosList'));   
+        const clickedId = div.dataset.id;
+        let todoItems = JSON.parse(localStorage.getItem('todosList')); 
         let newTodoItems = todoItems.filter(todo => todo.Id !== clickedId);
         
         localStorage.setItem('todosList', JSON.stringify(newTodoItems));

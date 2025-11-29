@@ -2,7 +2,7 @@ import { displayListUI } from "./listDisplay.js";
 
 function createTodo(listname, listDescription, targetDate, prioritySelector, projectList){
     return {
-        // Id : crypto.randomUUID(),
+        Id : crypto.randomUUID(),
         listname,
         listDescription,
         targetDate,
@@ -38,7 +38,8 @@ export function adddingNewList(){
             document.getElementById('listname').value ="";
             document.getElementById('listDescription').value ="";
             document.getElementById('targetDate').value ="";
-            document.querySelector("input[name='priority']:checked").value ="";
+            const prioritySel = document.querySelectorAll("input[name='priority']")
+            prioritySel.forEach(radio => radio.checked = false);
             document.getElementById('projectList').value = "";
 
             displayListUI(todosList);

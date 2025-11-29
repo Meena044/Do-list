@@ -4,9 +4,8 @@ import { adddingNewList } from "./addList.js";
 import { deleteProjectlist, deleteTodos } from "./delete.js";
 import { highlightBG } from "./tabSwitching.js";
 import { allTab } from "./allTab.js";
-import { inboxTab } from "./inboxTab.js";
+import { upcomingTab } from "./upcomingTab.js";
 // import { todayTab } from "./todayTab.js";
-// import { upcomingTab } from "./upcomingTab.js";
 // import { addingNewList } from "./addList.js"
 
 const openDialogProject = document.querySelector('.symbols');
@@ -22,8 +21,7 @@ const selectTag = document.getElementById('projectList');
 const legendOptions = document.getElementById('projects')
 const projectsOptions = document.getElementById('lists');
 const allbtn = document.getElementById('all');
-const inboxbtn = document.getElementById('inbox');
-const todaybtn = document.getElementById('today');
+// const todaybtn = document.getElementById('today');
 const upcomingbtn = document.getElementById('upcoming');
 
 
@@ -60,7 +58,7 @@ projectsOptions.addEventListener('click', (e)=>{
     highlightBG(e.target);
 });
 
-const allTabManager = allTab();
+allTab();
 allbtn.addEventListener('click', allTab.tableRow);
 // default clicked
 window.addEventListener('DOMContentLoaded', ()=>{
@@ -69,10 +67,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 });
 
 
-
-inboxbtn.addEventListener('click', () => inboxTab());
+upcomingbtn.addEventListener('click', upcomingTab);
 
 // todaybtn.addEventListener('click', ()=> todayTab());
-
-// upcomingbtn.addEventListener('click', ()=> upcomingTab());
 
