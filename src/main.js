@@ -5,6 +5,7 @@ import { deleteProjectlist, deleteTodos } from "./delete.js";
 import { highlightBG } from "./tabSwitching.js";
 import { allTab } from "./allTab.js";
 import { upcomingTab } from "./upcomingTab.js";
+import { completeTab } from "./completeTab.js";
 // import { todayTab } from "./todayTab.js";
 // import { addingNewList } from "./addList.js"
 
@@ -17,12 +18,11 @@ const listcancelbtn = document.getElementById('listcancel');
 const projectdialog = document.getElementById('newProject');
 const listdialog = document.getElementById('newList');
 const UlTagOfProjects = document.getElementById('lists');
-const selectTag = document.getElementById('projectList');
 const legendOptions = document.getElementById('projects')
-const projectsOptions = document.getElementById('lists');
 const allbtn = document.getElementById('all');
 // const todaybtn = document.getElementById('today');
 const upcomingbtn = document.getElementById('upcoming');
+const completebtn = document.getElementById('complete');
 
 
 openDialogProject.addEventListener('click',()=> projectdialog.showModal());
@@ -39,8 +39,6 @@ loadProjectsFromStorage(JSON.parse(localStorage.getItem("todoProjects")));
 
 const listManager = adddingNewList();
 listcreatebtn.addEventListener("click", listManager.readSubmit);
-// loadListFromStorage(JSON.parse(localStorage.getItem("todosList")))
-
 
 UlTagOfProjects.addEventListener('click', (e)=> deleteProjectlist(e.target));
 
@@ -53,21 +51,18 @@ legendOptions.addEventListener('click', (e)=>{
     highlightBG(e.target);
 });
 
-projectsOptions.addEventListener('click', (e)=>{
-    if (e.target.tagName !== "LI") return; 
-    highlightBG(e.target);
-});
 
-allTab();
-allbtn.addEventListener('click', allTab.tableRow);
+allbtn.addEventListener('click', allTab);
 // default clicked
 window.addEventListener('DOMContentLoaded', ()=>{
     allbtn.click();
     highlightBG(allbtn);
 });
 
-
 upcomingbtn.addEventListener('click', upcomingTab);
 
 // todaybtn.addEventListener('click', ()=> todayTab());
+
+// completebtn.addEventListener('click', completeTab);
+
 

@@ -7,7 +7,8 @@ function createTodo(listname, listDescription, targetDate, prioritySelector, pro
         listDescription,
         targetDate,
         prioritySelector,
-        projectList
+        projectList,
+        completed: false
     }
 
 }

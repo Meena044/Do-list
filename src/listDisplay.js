@@ -2,15 +2,14 @@ export function displayListUI(todosList){
 
     const cards = document.getElementById('cards');
     const cardlist = document.querySelectorAll('.cardDiv');
-        cardlist.forEach(card => {
-            card.innerHTML = "";
-    });
+        cardlist.forEach(card => card.remove());
 
     todosList.forEach(list => {
             const name = document.createElement('div');
             name.className='cardDiv';
             name.dataset.id = list.Id;
             name.innerHTML = `
+                <input type='checkbox' class="checkbox"> 
                 <span>${list.listname}</span>
                 <span>${list.listDescription}</span>
                 <span>${list.targetDate}</span>
@@ -18,7 +17,6 @@ export function displayListUI(todosList){
                 <span>${list.projectList}</span>
                 <span><img src="./image/delete.svg" alt = "delete icon" class='deleteicon'></img></span>
             `;
-     
             cards.append(name);
 
         });

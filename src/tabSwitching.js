@@ -1,14 +1,14 @@
 export function highlightBG(targetLi){
     const legendOptions = document.getElementById('projects')
-    const projectsOptions = document.getElementById('lists');
-    let items = legendOptions.querySelectorAll('li');
-    const projOpt = projectsOptions.querySelectorAll("li");
+    // const projectsOptions = document.getElementById('lists');
+    let items = legendOptions.querySelectorAll('.legendPro');
+    // const projOpt = projectsOptions.querySelectorAll("li");
     
     // remove background from all tabs
-    projOpt.forEach(opt => {
-        opt.style.backgroundColor = "";
-        opt.style.borderRadius = "";
-    });
+    // projOpt.forEach(opt => {
+    //     opt.style.backgroundColor = "";
+    //     opt.style.borderRadius = "";
+    // });
 
     items.forEach(item => {
         item.style.backgroundColor = "";

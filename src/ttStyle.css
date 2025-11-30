@@ -194,6 +194,12 @@ input[type="radio"]{
     accent-color: #730b8d;   
 }
 
+.checkbox{
+    width: 1.5rem;
+    margin-left: 1rem;
+    accent-color: #730b8d;
+}
+
 .prioritySelector{
     display: flex;
     margin: 1rem;
