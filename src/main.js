@@ -6,8 +6,7 @@ import { highlightBG } from "./tabSwitching.js";
 import { allTab } from "./allTab.js";
 import { upcomingTab } from "./upcomingTab.js";
 import { completeTab } from "./completeTab.js";
-// import { todayTab } from "./todayTab.js";
-// import { addingNewList } from "./addList.js"
+import { todayTab } from "./todayTab.js";
 
 const openDialogProject = document.querySelector('.symbols');
 const openDialogList = document.querySelector('.addicon');
@@ -20,7 +19,7 @@ const listdialog = document.getElementById('newList');
 const UlTagOfProjects = document.getElementById('lists');
 const legendOptions = document.getElementById('projects')
 const allbtn = document.getElementById('all');
-// const todaybtn = document.getElementById('today');
+const todaybtn = document.getElementById('today');
 const upcomingbtn = document.getElementById('upcoming');
 const completebtn = document.getElementById('complete');
 
@@ -61,7 +60,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 
 upcomingbtn.addEventListener('click', upcomingTab);
 
-// todaybtn.addEventListener('click', ()=> todayTab());
+todaybtn.addEventListener('click', todayTab);
 
 // completebtn.addEventListener('click', completeTab);
 
