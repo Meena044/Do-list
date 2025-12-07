@@ -11,7 +11,7 @@ export function allTab(){
         let todosList = JSON.parse(localStorage.getItem("todosList")) || [];
         tabHeading.textContent = "All";
 
-        displayListUI(todosList);  
+        displayListUI(todosList.filter(todo => !todo.completed));  
     }
 
     tableRow();

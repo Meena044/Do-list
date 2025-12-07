@@ -5,7 +5,7 @@ import { deleteProjectlist, deleteTodos } from "./delete.js";
 import { highlightBG } from "./tabSwitching.js";
 import { allTab } from "./allTab.js";
 import { upcomingTab } from "./upcomingTab.js";
-import { completeTab } from "./completeTab.js";
+import { completeTab, handleCheckbox } from "./completeTab.js";
 import { todayTab } from "./todayTab.js";
 
 const openDialogProject = document.querySelector('.symbols');
@@ -21,7 +21,8 @@ const legendOptions = document.getElementById('projects')
 const allbtn = document.getElementById('all');
 const todaybtn = document.getElementById('today');
 const upcomingbtn = document.getElementById('upcoming');
-const completebtn = document.getElementById('complete');
+const completebtn = document.getElementById('completed');
+ const allCards = document.getElementById('cards');
 
 
 openDialogProject.addEventListener('click',()=> projectdialog.showModal());
@@ -62,6 +63,14 @@ upcomingbtn.addEventListener('click', upcomingTab);
 
 todaybtn.addEventListener('click', todayTab);
 
-// completebtn.addEventListener('click', completeTab);
+completebtn.addEventListener('click', () => {
+    completeTab();
+});
+
+allCards.addEventListener('change', (e)=>{
+    if(e.target.classList.contains('checkbox')){
+        handleCheckbox(e.target);
+     }
+});
 
 

@@ -14,7 +14,6 @@ export function upcomingTab(){
     const mm = today.getMonth()+1;
     const dd = String(today.getDate()).padStart(2, '0');
     const fulltodaydate = `${yyyy}-${mm}-${dd}`;
-    console.log(yyyy, mm, dd, fulltodaydate);
     let upcomingList = [];
 
     todosList.forEach(todo => {
