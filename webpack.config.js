@@ -21,7 +21,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/tt.html",
     }),
-    new MiniCssExtractPlugin()
+    new MiniCssExtractPlugin({
+      filename: 'ttStyle.css',
+    }),
   ],
   module: {
     rules: [
