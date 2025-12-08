@@ -19,7 +19,7 @@ export function todayTab(){
 
     todosList.forEach(todo => {
         // console.log(todo.targetDate);
-        if(todo.targetDate === fulltodaydate){
+        if(todo.targetDate === fulltodaydate && todo.completed == false){
             // console.log(todo.targetDate);
             todayList.push(todo);
         }

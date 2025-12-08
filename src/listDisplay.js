@@ -1,3 +1,5 @@
+import deleteIcon from './image/delete.svg';
+console.log(deleteIcon);
 export function displayListUI(todosList){
 
     const cards = document.getElementById('cards');
@@ -15,8 +17,9 @@ export function displayListUI(todosList){
                 <span>${list.targetDate}</span>
                 <span>${list.prioritySelector}</span>
                 <span>${list.projectList}</span>
-                <span><img src="./image/delete.svg" alt = "delete icon" class='deleteicon'></img></span>
+                <span><img src="${deleteIcon}"alt = "delete icon" class='deleteicon'></img></span>
             `;
+        
             cards.append(name);
 
         });

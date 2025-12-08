@@ -7,6 +7,7 @@ import { allTab } from "./allTab.js";
 import { upcomingTab } from "./upcomingTab.js";
 import { completeTab, handleCheckbox } from "./completeTab.js";
 import { todayTab } from "./todayTab.js";
+import './ttStyle.css';
 
 const openDialogProject = document.querySelector('.symbols');
 const openDialogList = document.querySelector('.addicon');
@@ -22,7 +23,7 @@ const allbtn = document.getElementById('all');
 const todaybtn = document.getElementById('today');
 const upcomingbtn = document.getElementById('upcoming');
 const completebtn = document.getElementById('completed');
- const allCards = document.getElementById('cards');
+const allCards = document.getElementById('cards');
 
 
 openDialogProject.addEventListener('click',()=> projectdialog.showModal());
@@ -38,7 +39,8 @@ createbtn.addEventListener("click", projectManager.readProjectform);
 loadProjectsFromStorage(JSON.parse(localStorage.getItem("todoProjects")));
 
 const listManager = adddingNewList();
-listcreatebtn.addEventListener("click", listManager.readSubmit);
+// listcreatebtn.addEventListener("click", listManager.readSubmit);
+listManager.readSubmit();
 
 UlTagOfProjects.addEventListener('click', (e)=> deleteProjectlist(e.target));
 

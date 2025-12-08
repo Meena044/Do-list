@@ -20,13 +20,22 @@ export function adddingNewList(){
         const listForm = document.getElementById('newListForm');
 
         listForm.addEventListener('submit', ()=>{
-
+            // event.preventDefault();
             let todosList = JSON.parse(localStorage.getItem("todosList")) || [];
             
             const listname = document.getElementById('listname').value.trim();
             const listDescription = document.getElementById('listDescription').value.trim();
             const targetDate = document.getElementById('targetDate').value.trim();
-            const prioritySelector = document.querySelector("input[name='priority']:checked").value;
+            // const prioritySelector = document.querySelector("input[name='priority']:checked").value;
+            const priorityInput = document.querySelector("input[name='priority']:checked");
+
+            if (!priorityInput) {
+            console.warn("No priority selected yet — handler fired early.");
+            alert("Please select a priority before submitting.");
+            return;  // prevents the crash
+            }
+
+            const prioritySelector = priorityInput.value;
             const projectList = document.getElementById('projectList').value.trim();
 
             if(!listname || !projectList) return;

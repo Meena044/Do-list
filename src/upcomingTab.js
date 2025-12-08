@@ -17,7 +17,7 @@ export function upcomingTab(){
     let upcomingList = [];
 
     todosList.forEach(todo => {
-        if(todo.targetDate !== fulltodaydate && todo.targetDate > fulltodaydate){
+        if(todo.targetDate !== fulltodaydate && todo.targetDate > fulltodaydate && todo.completed == false){
             console.log(todo.targetDate);
             upcomingList.push(todo);
         }
