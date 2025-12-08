@@ -7,7 +7,6 @@ import { allTab } from "./allTab.js";
 import { upcomingTab } from "./upcomingTab.js";
 import { completeTab, handleCheckbox } from "./completeTab.js";
 import { todayTab } from "./todayTab.js";
-import './ttStyle.css';
 
 const openDialogProject = document.querySelector('.symbols');
 const openDialogList = document.querySelector('.addicon');
