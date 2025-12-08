@@ -20,6 +20,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/tt.html",
+      inject: 'body',
     }),
     new MiniCssExtractPlugin({
       filename: 'ttStyle.css',
