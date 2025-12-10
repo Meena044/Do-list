@@ -12,7 +12,6 @@ export function addingNewProject(){
         const projectsForm = document.getElementById('newProjectForm');
 
         projectsForm.addEventListener('submit', ()=>{
-            // e.preventDefault();
 
             const inputProjectName = document.getElementById('projectName').value.trim();
             if (!inputProjectName) return;
@@ -26,7 +25,6 @@ export function addingNewProject(){
 
             document.getElementById('projectName').value="";
 
-            // loadProjectsFromStorage(JSON.parse(localStorage.getItem("todoProjects")));
             loadProjectsFromStorage(todoProjects);
         });
     }

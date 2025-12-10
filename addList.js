@@ -32,7 +32,7 @@ export function adddingNewList(){
             if (!priorityInput) {
             console.warn("No priority selected yet — handler fired early.");
             alert("Please select a priority before submitting.");
-            return;  // prevents the crash
+            return; 
             }
 
             const prioritySelector = priorityInput.value;

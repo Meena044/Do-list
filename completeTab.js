@@ -1,4 +1,3 @@
-import { allTab } from "./allTab.js";
 import { displayListUI } from "./listDisplay.js";
 let todosList = JSON.parse(localStorage.getItem('todosList')) || [];
 
@@ -10,8 +9,7 @@ export function completeTab(){
     allCards.querySelectorAll(".cardDiv").forEach(card => card.remove());
 
     const completedtodos = todosList.filter(todo =>todo.completed === true);
-    displayListUI(completedtodos);
-    
+    displayListUI(completedtodos); 
 }
 
 export function handleCheckbox(target){
@@ -32,5 +30,5 @@ export function handleCheckbox(target){
         
     });
     localStorage.setItem('todosList', JSON.stringify(todosList));
-    cardDiv.remove();
+    // cardDiv.remove();
 }
