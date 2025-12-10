@@ -14,6 +14,9 @@ module.exports = {
   devtool: "source-map",
   devServer: {
     watchFiles: ["./index.html"],
+    static: './dist',   
+    port: 3000,
+    open: true
   },
   
   plugins: [
@@ -39,11 +42,6 @@ module.exports = {
       }
     ],
   },
-  
-  devServer: {
-    static: './dist',   // important
-    port: 3000,
-    open: true
-  }
+
 
 };
