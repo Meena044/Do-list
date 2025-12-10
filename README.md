@@ -43,5 +43,6 @@
 - HTML  
 - CSS  
 - DOM manipulation  
-- Web Storage API (localStorage)  
+- Web Storage API (localStorage)
+- Webpack
 
