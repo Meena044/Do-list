@@ -40,7 +40,6 @@ body{
 
 #main{
     display: flex;
-    /* gap: 2rem; */
     box-sizing: border-box;
 }
 

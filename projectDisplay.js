@@ -1,3 +1,4 @@
+import deleteIcon from './image/delete.svg';
 export function loadProjectsFromStorage(projectsArray) {
 
     const UlTagOfProjects = document.getElementById('lists');
@@ -19,7 +20,7 @@ export function loadProjectsFromStorage(projectsArray) {
         selectTag.append(optionTag);
 
         const deleteImg = document.createElement('img');
-        deleteImg.src ='./image/delete.svg';
+        deleteImg.src = deleteIcon;
         deleteImg.alt = "delete icon";
         deleteImg.classList.add('deleteicon');
         liTag.append(deleteImg);

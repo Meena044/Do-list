@@ -1,3 +1,4 @@
+import './ttStyle.css';
 import { addingNewProject }  from "./addProject.js";
 import { loadProjectsFromStorage } from "./projectDisplay.js"
 import { adddingNewList } from "./addList.js";
@@ -12,7 +13,6 @@ const openDialogProject = document.querySelector('.symbols');
 const openDialogList = document.querySelector('.addicon');
 const createbtn = document.getElementById('create');
 const cancelbtn = document.getElementById('cancel');
-const listcreatebtn = document.getElementById('listcreate');
 const listcancelbtn = document.getElementById('listcancel');
 const projectdialog = document.getElementById('newProject');
 const listdialog = document.getElementById('newList');
@@ -31,14 +31,11 @@ openDialogList.addEventListener('click',()=> listdialog.showModal());
 cancelbtn.addEventListener('click',()=> projectdialog.close());
 listcancelbtn.addEventListener('click',()=> listdialog.close());
 
-// when create button is clicked in popup 
 const projectManager = addingNewProject();
 createbtn.addEventListener("click", projectManager.readProjectform);
-// function call to display projects on UI
 loadProjectsFromStorage(JSON.parse(localStorage.getItem("todoProjects")));
 
 const listManager = adddingNewList();
-// listcreatebtn.addEventListener("click", listManager.readSubmit);
 listManager.readSubmit();
 
 UlTagOfProjects.addEventListener('click', (e)=> deleteProjectlist(e.target));

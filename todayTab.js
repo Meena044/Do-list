@@ -1,3 +1,4 @@
+import { todosList } from "./localeStorage.js";
 import { displayListUI } from "./listDisplay.js";
 
 export function todayTab(){
@@ -6,8 +7,6 @@ export function todayTab(){
 
     const allCards = document.getElementById('cards');
     allCards.querySelectorAll(".cardDiv").forEach(card => card.remove());
-
-    const todosList = JSON.parse(localStorage.getItem('todosList')) || [];
     
     const today = new Date();
     const yyyy = today.getFullYear();
@@ -18,9 +17,7 @@ export function todayTab(){
     let todayList = [];
 
     todosList.forEach(todo => {
-        // console.log(todo.targetDate);
         if(todo.targetDate === fulltodaydate && todo.completed == false){
-            // console.log(todo.targetDate);
             todayList.push(todo);
         }
     });

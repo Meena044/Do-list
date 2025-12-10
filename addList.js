@@ -1,3 +1,4 @@
+import { todosList, saveTodos } from "./localeStorage.js";
 import { displayListUI } from "./listDisplay.js";
 
 function createTodo(listname, listDescription, targetDate, prioritySelector, projectList){
@@ -15,20 +16,17 @@ function createTodo(listname, listDescription, targetDate, prioritySelector, pro
 
 export function adddingNewList(){
 
-    // init() runs after the DOM is ready so event listeners don't break.
+    // readSubmit() runs after the DOM is ready so event listeners don't break.
     function readSubmit(){
         const listForm = document.getElementById('newListForm');
 
         listForm.addEventListener('submit', ()=>{
-            // event.preventDefault();
-            let todosList = JSON.parse(localStorage.getItem("todosList")) || [];
             
             const listname = document.getElementById('listname').value.trim();
             const listDescription = document.getElementById('listDescription').value.trim();
             const targetDate = document.getElementById('targetDate').value.trim();
             // const prioritySelector = document.querySelector("input[name='priority']:checked").value;
             const priorityInput = document.querySelector("input[name='priority']:checked");
-
             if (!priorityInput) {
             console.warn("No priority selected yet — handler fired early.");
             alert("Please select a priority before submitting.");
@@ -43,7 +41,8 @@ export function adddingNewList(){
             const todo= createTodo(listname, listDescription, targetDate, prioritySelector, projectList);
 
             todosList.push(todo);
-            localStorage.setItem("todosList", JSON.stringify(todosList));
+            // localStorage.setItem("todosList", JSON.stringify(todosList));
+            saveTodos();
 
             document.getElementById('listname').value ="";
             document.getElementById('listDescription').value ="";

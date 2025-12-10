@@ -1,3 +1,4 @@
+import { todoProjects, saveProjects } from "./localeStorage.js";
 import { loadProjectsFromStorage } from "./projectDisplay.js"
 
 function createProject(inputProjectName){
@@ -16,12 +17,13 @@ export function addingNewProject(){
             const inputProjectName = document.getElementById('projectName').value.trim();
             if (!inputProjectName) return;
 
-            let todoProjects = JSON.parse(localStorage.getItem("todoProjects")) || [];
+            // let todoProjects = JSON.parse(localStorage.getItem("todoProjects")) || [];
 
             const project = createProject(inputProjectName);
  
             todoProjects.push(project);
-            localStorage.setItem('todoProjects', JSON.stringify(todoProjects));   
+            // localStorage.setItem('todoProjects', JSON.stringify(todoProjects));
+            saveProjects();   
 
             document.getElementById('projectName').value="";
 

@@ -1,4 +1,3 @@
-
 export function deleteTodos(target){
    if(target.classList.contains('deleteicon')){
         const div = target.closest('.cardDiv');

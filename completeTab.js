@@ -1,5 +1,5 @@
+import { todosList, saveTodos } from "./localeStorage.js";
 import { displayListUI } from "./listDisplay.js";
-let todosList = JSON.parse(localStorage.getItem('todosList')) || [];
 
 export function completeTab(){
     const tabHeading =document.getElementById('tabHeading');
@@ -29,6 +29,6 @@ export function handleCheckbox(target){
         }
         
     });
-    localStorage.setItem('todosList', JSON.stringify(todosList));
-    // cardDiv.remove();
+    saveTodos();
+    cardDiv.style.display = "none";
 }
