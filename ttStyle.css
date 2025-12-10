@@ -123,7 +123,6 @@ li, #projectLabel, #listLabel{
     padding: 2rem;
     border-radius: 3rem;
     border: none;
-    
     background-color: rgb(214, 151, 250);
 }
 
@@ -133,7 +132,7 @@ li, #projectLabel, #listLabel{
     padding: 2rem;
 }
 
-input[type="text"], input[type="date"], select{
+#newListForm input[type="text"], input[type="date"], #newProjectForm input[type="text"], select{
     width:95%;
     height: 1.5rem;
     background-color: rgb(248, 247, 248);
