@@ -132,7 +132,8 @@ li, #projectLabel, #listLabel{
     padding: 2rem;
 }
 
-#newListForm input[type="text"], 
+/* #newListForm input[type="text"],  */
+#listname, #listDescription, #projectName,
 #newListForm input[type="date"], 
 #newProjectForm input[type="text"], 
 select{
