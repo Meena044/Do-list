@@ -132,19 +132,24 @@ li, #projectLabel, #listLabel{
     padding: 2rem;
 }
 
-#newListForm input[type="text"], 
-#newListForm input[type="date"], 
-#newProjectForm input[type="text"], 
-#newListForm select{
-    width:95%;
-    height: 1.5rem;
-    background-color: rgb(248, 247, 248);
-    margin: 1rem;
-    margin-left: 0;
-    border: none;
-    font-size: 1.3rem;
-    padding: 0.5rem;
+#newListForm input[type="text"],
+#newListForm input[type="date"],
+#newProjectForm input[type="text"],
+#newListForm select {
+  box-sizing: border-box;
+  width: 95%;
+  padding: 0.6rem 0.8rem;
+  font-size: 1.3rem;
+  border: none;
+  background-color: rgb(248, 247, 248);
 }
+
+
+#newListForm input[type="date"] {
+  appearance: none;
+  -webkit-appearance: none;
+}
+
 
 #projectList{
     height: 2.5rem;
